@@ -1,88 +1,469 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ignacio Giles Arauz | Currículum</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-:root{
---primary:#2563eb;
---secondary:#0f172a;
---bg:#f8fafc;
---card:#ffffff;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-font-family:'Poppins',sans-serif;
-background:var(--bg);
-color:var(--secondary);
-line-height:1.6;
-}
-header{
-background:linear-gradient(135deg,var(--primary),#1e40af);
-color:#fff;
-padding:3rem 1rem;
-text-align:center;
-}
-header h1{font-size:2.5rem;font-weight:600}
-header p{font-size:1.1rem;opacity:.95}
-.container{max-width:1000px;margin:2rem auto;padding:0 1rem}
-.card{
-background:var(--card);
-border-radius:16px;
-padding:2rem;
-margin-bottom:1.5rem;
-box-shadow:0 10px 25px rgba(0,0,0,.08)
-}
-.card h2{
-color:var(--primary);
-margin-bottom:1rem;
-font-size:1.4rem
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:1rem
-}
-.item strong{display:block;font-weight:600}
-footer{
-text-align:center;
-padding:1.5rem;
-font-size:.9rem;
-color:#475569
-}
-@media(max-width:600px){
-header h1{font-size:2rem}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignacio Giles Arauz - Curriculum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #64748b;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --card: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin: 0 auto 1.5rem;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 5px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .card h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2 i {
+            font-size: 1.2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .item {
+            background: #f8fafc;
+            padding: 1.2rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .item:hover {
+            background: #f1f5f9;
+        }
+
+        .item strong {
+            display: block;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .item p {
+            color: var(--secondary);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: #dbeafe;
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f1f5f9;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--dark);
+            transition: var(--transition);
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .contact-link:hover {
+            background: #e2e8f0;
+            transform: translateX(5px);
+        }
+
+        .contact-link i {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .print-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .contact-link {
+                min-width: 100%;
+            }
+            
+            .print-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 0.8rem 1.2rem;
+            }
+        }
+
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <div class="profile-img">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <h1>Ignacio Giles Arauz</h1>
+            <p>Estudiante de Ingeniería en Sistemas</p>
+            <div class="tagline">
+                <i class="fas fa-bullseye"></i> En formación continua
+            </div>
+        </header>
 
+        <main>
+            <section class="card">
+                <h2><i class="fas fa-user"></i> Perfil Profesional</h2>
+                <p>Estudiante de Ingeniería en Sistemas con sólido interés en desarrollo de software, bases de datos y aplicaciones web. En constante formación académica y práctica, buscando oportunidades para aplicar conocimientos teóricos en proyectos reales y contribuir al desarrollo tecnológico.</p>
+            </section>
 
-<header>
-<h1>Ignacio Giles Arauz</h1>
-<p>Estudiante de Ingeniería en Sistemas</p>
-</header>
+            <div class="grid">
+                <section class="card">
+                    <h2><i class="fas fa-user-circle"></i> Datos Personales</h2>
+                    <div class="item">
+                        <strong><i class="fas fa-birthday-cake"></i> Fecha de nacimiento</strong>
+                        <p>02 de Junio de 1994</p>
+                    </div>
+                    <div class="item">
+                        <strong><i class="fas fa-phone"></i> Teléfono</strong>
+                        <p>+591 69073636</p>
+                    </div>
+                    <div class="item">
+                        <strong><i class="fas fa-map-marker-alt"></i> Ciudad</strong>
+                        <p>Santa Cruz de la Sierra, Bolivia</p>
+                    </div>
+                    <div class="item">
+                        <strong><i class="fas fa-flag"></i> Nacionalidad</strong>
+                        <p>Boliviana</p>
+                    </div>
+                </section>
 
+                <section class="card">
+                    <h2><i class="fas fa-graduation-cap"></i> Formación Académica</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <strong>Ingeniería en Sistemas</strong>
+                            <p>Universidad Privada Domingo Savio (UPDS)</p>
+                            <p><i class="far fa-calendar"></i> 2022 - Actualidad</p>
+                            <p><i class="fas fa-book"></i> Séptimo semestre en curso</p>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Educación Secundaria</strong>
+                            <p>Unidad Educativa [Nombre del Colegio]</p>
+                            <p><i class="far fa-calendar"></i> 2008 - 2011</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
-<main class="container">
+            <section class="card">
+                <h2><i class="fas fa-laptop-code"></i> Habilidades Técnicas</h2>
+                <div class="skills">
+                    <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+                    <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                    <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                    <span class="skill-tag"><i class="fas fa-database"></i> Bases de Datos</span>
+                    <span class="skill-tag"><i class="fas fa-code"></i> Programación</span>
+                    <span class="skill-tag"><i class="fas fa-paint-brush"></i> Diseño Web</span>
+                    <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                    <span class="skill-tag"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+                </div>
+            </section>
 
+            <section class="card">
+                <h2><i class="fas fa-envelope"></i> Contacto</h2>
+                <div class="contact-links">
+                    <a href="tel:+59169073636" class="contact-link">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Teléfono</strong>
+                            <p>+591 69073636</p>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/59169073636" target="_blank" class="contact-link">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <p>+591 69073636</p>
+                        </div>
+                    </a>
+                    <div class="contact-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Ubicación</strong>
+                            <p>Santa Cruz de la Sierra, Bolivia</p>
+                        </div>
+                    </div>
+                    <a href="https://github.com/IgnacioGiles" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <strong>GitHub</strong>
+                            <p>github.com/IgnacioGiles</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
 
-<section class="card">
-<h2>Perfil</h2>
-<p>Estudiante de Ingeniería en Sistemas con interés en desarrollo de software, bases de datos y aplicaciones web. En constante formación académica y práctica.</p>
-</section>
+            <section class="card">
+                <h2><i class="fas fa-bullseye"></i> Objetivos</h2>
+                <p>Busco oportunidades para aplicar mis conocimientos en desarrollo de software, contribuir a proyectos innovadores y continuar mi crecimiento profesional en el área tecnológica. Mi objetivo es especializarme en desarrollo web full-stack y gestión de bases de datos.</p>
+            </section>
+        </main>
 
+        <footer>
+            <p>© 2026 - Ignacio Giles Arauz | Curriculum Vitae Digital</p>
+            <p>Última actualización: Enero 2026</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #94a3b8;">
+                <i class="fas fa-globe-americas"></i> Santa Cruz de la Sierra, Bolivia
+            </p>
+        </footer>
 
-<section class="card">
-<h2>Datos Personales</h2>
-<div class="grid">
-<div class="item"><strong>Fecha de nacimiento</strong>02/06/1994</div>
-<div class="item"><strong>Teléfono</strong>69073636</div>
-<div class="item"><strong>Ciudad</strong>Santa Cruz de la Sierra</div>
-</div>
-</section>
+        <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Imprimir CV
+        </button>
+    </div>
 
-
+    <script>
+        // Actualizar año automáticamente
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSpan = document.querySelector('footer p');
+            if (yearSpan) {
+                yearSpan.innerHTML = yearSpan.innerHTML.replace('2026', new Date().getFullYear());
+            }
+            
+            // Efecto de carga para las tarjetas
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Animación para habilidades
+            const skills = document.querySelectorAll('.skill-tag');
+            skills.forEach((skill, index) => {
+                skill.style.opacity = '0';
+                
+                setTimeout(() => {
+                    skill.style.transition = 'opacity 0.3s ease';
+                    skill.style.opacity = '1';
+                }, 500 + (index * 50));
+            });
+        });
+    </script>
+</body>
 </html>
